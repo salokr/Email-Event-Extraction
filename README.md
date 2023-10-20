@@ -31,7 +31,7 @@ export MAILEX_HOME=$(pwd)
 export PYTHONPATH=$MAILEX_HOME:$MAILEX_HOME/utils:$PYTHONPATH
 ```
 
-Then download the dataset from [this link](https://yale-lily.github.io/spider) and save it under the `data/` folder. Your directory structure should like the following:
+Then download the dataset from [this link]([https://yale-lily.github.io/spider](https://drive.google.com/file/d/1a336g4-wlEwsVbXLPB9wPQnBDRE933mb/view?usp=sharing)) and save it under the `data/` folder. Your directory structure should like the following:
 ```
 Email-Event-Extraction
 │

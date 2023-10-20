@@ -56,7 +56,6 @@ for idx, (turns, sentence) in enumerate(zip(jsn['events'], jsn['sentences'])):
         print("Meta Semantic Roles:", '\n'.join([msr for msr in metaSRs]))
 ```
 ### 2.2 MailEx Data Statistics 
-### MailEx Data Statistics
 
 | Data Statistics                                                   | Total (train/dev/test)          |
 |------------------------------------------------------------------|--------------------------------|

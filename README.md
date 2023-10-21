@@ -56,16 +56,17 @@ for idx, (turns, sentence) in enumerate(zip(jsn['events'], jsn['sentences'])):
         print("Meta Semantic Roles:", '\n'.join([msr for msr in metaSRs]))
 ```
 ### 2.2 MailEx Data Statistics 
+### MailEx Data Statistics
 
 | Data Statistics                                                   | Total (train/dev/test)          |
 |------------------------------------------------------------------|--------------------------------|
 | # of email threads                                               | 1,500 (1,200/150/150)           |
-| # of total emails                                                | 3,994 (3,156/397/391)           |
-| # of non-event emails                                            | 733 (568/97/68)                 |
-| # of annotated events                                            | 8,966 (7,175/833/958)           |
+| # of total emails                                                | 3,936 (3,117/414/405)           |
+| # of non-event emails                                            | 776 (636/70/70)                 |
+| # of annotated events                                            | 8,392 (6,571/946/875)           |
 | Avg. # of events of the same type appearing at least twice       | 3.05                           |
-| Avg. # of words in an email                                      | 63.91                          |
-| Avg. # of words in a trigger                                     | 2.90                           |
+| Avg. # of words in an email                                      | 64.400                          |
+| Avg. # of words in a trigger                                     | 2.64                           |
 | Avg. # of words in an argument                                   | 7.41                           |
 
 ### Download Link
@@ -139,7 +140,7 @@ python sequence_labelling/BERT_argument_only.py
 ### 3.2.1 Experiments with BART-based model
 For experimenting with generative models, we need to create templates. The preprocessing function in the `gen_data_loader.py` takes care of generating the templates. To perform end-to-end event and argument extraction, run the following:
 ```
-python sequence_labelling/BART_end2end.py
+python sequence_labelling/BART_end2end.py --model=gen --ckpt_name=enron --dataset=enron --train_file=data/train.jsonl     --val_file=data/dev.jsonl     --test_file=data/test.jsonl     --train_batch_size=4     --val_batch_size=4     --learning_rate=3e-5     --accumulate_grad_batches=8     --num_train_epochs=10
 ```
 Part of the code has been adapted from `https://github.com/raspberryice/gen-arg`.
 ### 3.2.2 Experiments with In-context learning

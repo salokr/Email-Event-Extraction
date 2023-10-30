@@ -1,4 +1,7 @@
 # <span style="font-variant: caps;">MailEx: </span>Email Event and Argument Extraction
+<a href="" target='_blank'>
+<img src="https://visitor-badge.laobi.icu/badge?page_id=SALOKR.MAILEX&left_color=gray&right_color=orange">
+</a>
 
 This repository provides code implementation for our paper [<span style="font-variant: caps;">MailEx: </span>Email Event and Argument Extraction](https://arxiv.org/pdf/2305.08195.pdf) accepted by *EMNLP 2023*.
 

@@ -45,18 +45,27 @@ In total, we collected 1500 email threads from the Enron dataset. We split the d
     └── ...   
 ```
 Each json file in the dataset contains a dictionary with as many turns as in the email thread. Each turn is indexed by the event types. Every event type in a turn is annotated with 1) BIO notations for each word in the email for triggers and arguments and 2) meta-semantic roles.  
-To view annotations, one can use the following piece of code to brose the data:
+To view annotations, one can use the following piece of code to browse the data:
 ```
 import json
-jsn = json.load(file_name)
+jsn = json.load(open(file_name))
 for idx, (turns, sentence) in enumerate(zip(jsn['events'], jsn['sentences'])):
+    collected_labels, collected_triggers = [], []
     for event_type in jsn['events'][turns]:#each turn is grouped by same event type
         labels, triggers, metaSRs = jsn['events'][turns][event_type]['labels'], jsn['events'][turns][event_type]['triggers'], jsn['events'][turns][event_type]['extras']
-        print("Sentence: ", sentence)
-        print("Event Type: ", event_type)
-        print("Event Triggers: ", ';'.join(triggers))
-        print("Labels\n", '\n'.join([label for label in labels]))
-        print("Meta Semantic Roles:", '\n'.join([msr for msr in metaSRs]))
+        collected_labels.extend(labels)
+        collected_triggers.extend(triggers)
+    labels = list(zip(*collected_labels))
+    annotated_texts = [(txt, lbl) for txt, lbl in zip(sentence, labels)]
+    for item, sen in zip(annotated_texts, sentence):
+        elements = [item[0]] + list(item[1] if isinstance(item[1], tuple) else (item[1],))
+        print('\t'.join(str(element) for element in elements))
+    print("-"*100)
+    print("Event Triggers")
+    for trigger in collected_triggers:
+        print(trigger)
+        print("-"*50)
+    print("=*"*100)
 ```
 ### 2.2 MailEx Data Statistics 
 ### MailEx Data Statistics

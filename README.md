@@ -7,13 +7,27 @@ This repository provides code implementation for our paper [<span style="font-va
 
 Please cite our paper if you find our work/code helpful!
 ```
-@misc{srivastava2023mailex,
-      title={MAILEX: Email Event and Argument Extraction}, 
-      author={Saurabh Srivastava and Gaurav Singh and Shou Matsumoto and Ali Raz and Paulo Costa and Joshua Poore and Ziyu Yao},
-      year={2023},
-      eprint={2305.13469},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{srivastava-etal-2023-mailex,
+    title = "{M}ail{E}x: Email Event and Argument Extraction",
+    author = "Srivastava, Saurabh  and
+      Singh, Gaurav  and
+      Matsumoto, Shou  and
+      Raz, Ali  and
+      Costa, Paulo  and
+      Poore, Joshua  and
+      Yao, Ziyu",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.801",
+    doi = "10.18653/v1/2023.emnlp-main.801",
+    pages = "12964--12987",
+    abstract = "In this work, we present the first dataset, MailEx, for performing event extraction from conversational email threads. To this end, we first proposed a new taxonomy covering 10 event types and 76 arguments in the email domain. Our final dataset includes 1.5K email threads and {\textasciitilde}4K emails, which are annotated with a total of {\textasciitilde}8K event instances. To understand the task challenges, we conducted a series of experiments comparing three types of approaches, i.e., fine-tuned sequence labeling, fine-tuned generative extraction, and few-shot in-context learning. Our results showed that the task of email event extraction is far from being addressed, due to challenges lying in, e.g., extracting non-continuous, shared trigger spans, extracting non-named entity arguments, and modeling the email conversational history. Our work thus suggests more future investigations in this domain-specific event extraction task.",
 }
 ```
 
